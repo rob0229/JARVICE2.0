@@ -5,10 +5,16 @@ import java.util.EnumSet;
 
 import jarvice.frontend.*;
 import jarvice.frontend.wookie.*;
+import jarvice.intermediate.Definition;
+import jarvice.intermediate.ICodeFactory;
+import jarvice.intermediate.ICodeNode;
+import jarvice.intermediate.RoutineCode;
+import jarvice.intermediate.SymTabEntry;
+import jarvice.intermediate.TypeForm;
+import jarvice.intermediate.TypeSpec;
 import jarvice.intermediate.symtabimpl.*;
 import jarvice.intermediate.icodeimpl.*;
 import jarvice.intermediate.typeimpl.*;
-
 import static jarvice.frontend.wookie.WookieTokenType.*;
 import static jarvice.frontend.wookie.WookieErrorCode.*;
 import static jarvice.intermediate.symtabimpl.SymTabKeyImpl.*;

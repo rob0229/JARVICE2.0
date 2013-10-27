@@ -57,12 +57,12 @@ public class Wookie
                 SymTabEntry programId = symTabStack.getProgramId();
                 iCode = (ICode) programId.getAttribute(ROUTINE_ICODE);
 
-                if (xref) {
+                if (true) {
                     CrossReferencer crossReferencer = new CrossReferencer();
                     crossReferencer.print(symTabStack);
                 }
 
-                if (intermediate) {
+                if (true) {
                     ParseTreePrinter treePrinter =
                                          new ParseTreePrinter(System.out);
                     treePrinter.print(symTabStack);
