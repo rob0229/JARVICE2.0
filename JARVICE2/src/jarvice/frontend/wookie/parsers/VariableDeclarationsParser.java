@@ -18,10 +18,8 @@ import static jarvice.intermediate.typeimpl.TypeKeyImpl.*;
 /**
  * <h1>VariableDeclarationsParser</h1>
  *
- * <p>Parse Pascal variable declarations.</p>
+ * <p>Parse Wookie variable declarations.</p>
  *
- * <p>Copyright (c) 2009 by Ronald Mak</p>
- * <p>For instructional purposes only.  No warranties.</p>
  */
 public class VariableDeclarationsParser extends DeclarationsParser
 {

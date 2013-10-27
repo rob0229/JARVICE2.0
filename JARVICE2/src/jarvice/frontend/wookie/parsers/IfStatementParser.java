@@ -16,10 +16,7 @@ import static jarvice.intermediate.icodeimpl.ICodeNodeTypeImpl.*;
 /**
  * <h1>IfStatementParser</h1>
  *
- * <p>Parse a Pascal IF statement.</p>
- *
- * <p>Copyright (c) 2009 by Ronald Mak</p>
- * <p>For instructional purposes only.  No warranties.</p>
+ * <p>Parse a Wookie IF statement.</p>
  */
 public class IfStatementParser extends StatementParser
 {

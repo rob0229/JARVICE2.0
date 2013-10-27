@@ -38,7 +38,7 @@ public class CaseStatementParser extends StatementParser
 
     // Synchronization set for starting a CASE option constant.
     private static final EnumSet<WookieTokenType> CONSTANT_START_SET =
-        EnumSet.of(IDENTIFIER, INTEGER, PLUS, MINUS, STRING);
+        EnumSet.of(IDENTIFIER, INT, PLUS, MINUS, STRING);
 
     // Synchronization set for OF.
     private static final EnumSet<WookieTokenType> OF_SET =
@@ -248,7 +248,7 @@ public class CaseStatementParser extends StatementParser
                 break;
             }
 
-            case INTEGER: {
+            case INT: {
                 constantNode = parseIntegerConstant(token.getText(), sign);
                 constantType = Predefined.integerType;
                 break;

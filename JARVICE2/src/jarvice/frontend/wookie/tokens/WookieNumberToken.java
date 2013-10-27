@@ -56,7 +56,7 @@ public class WookieNumberToken extends WookieToken
         boolean sawDotDot = false;     // true if saw .. token
         char currentChar;              // current character
 
-        type = INTEGER;  // assume INTEGER token type for now
+        type = INT;  // assume INTEGER token type for now
 
         // Extract the digits of the whole part of the number.
         wholeDigits = unsignedIntegerDigits(textBuffer);
@@ -104,7 +104,7 @@ public class WookieNumberToken extends WookieToken
         }
 
         // Compute the value of an integer number token.
-        if (type == INTEGER) {
+        if (type == INT) {
             int integerValue = computeIntegerValue(wholeDigits);
 
             if (type != ERROR) {

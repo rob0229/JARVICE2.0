@@ -20,10 +20,8 @@ import static jarvice.intermediate.icodeimpl.ICodeKeyImpl.*;
 /**
  * <h1>ExpressionParser</h1>
  *
- * <p>Parse a Pascal expression.</p>
+ * <p>Parse a Wookie expression.</p>
  *
- * <p>Copyright (c) 2009 by Ronald Mak</p>
- * <p>For instructional purposes only.  No warranties.</p>
  */
 public class ExpressionParser extends StatementParser
 {
@@ -38,7 +36,7 @@ public class ExpressionParser extends StatementParser
 
     // Synchronization set for starting an expression.
     static final EnumSet<WookieTokenType> EXPR_START_SET =
-        EnumSet.of(PLUS, MINUS, IDENTIFIER, INTEGER, REAL, STRING,
+        EnumSet.of(PLUS, MINUS, IDENTIFIER, INT, REAL, STRING,
                    WookieTokenType.NOT, LEFT_PAREN);
 
     /**
@@ -55,7 +53,7 @@ public class ExpressionParser extends StatementParser
 
     // Set of relational operators.
     private static final EnumSet<WookieTokenType> REL_OPS =
-        EnumSet.of(EQUALS, NOT_EQUALS, LESS_THAN, LESS_EQUALS,
+        EnumSet.of(EQUALS_EQUALS, NOT_EQUALS, LESS_THAN, LESS_EQUALS,
                    GREATER_THAN, GREATER_EQUALS);
 
     // Map relational operator tokens to node types.
@@ -397,7 +395,7 @@ public class ExpressionParser extends StatementParser
                 return parseIdentifier(token);
             }
 
-            case INTEGER: {
+            case INT: {
                 // Create an INTEGER_CONSTANT node as the root node.
                 rootNode = ICodeFactory.createICodeNode(INTEGER_CONSTANT);
                 rootNode.setAttribute(VALUE, token.getValue());

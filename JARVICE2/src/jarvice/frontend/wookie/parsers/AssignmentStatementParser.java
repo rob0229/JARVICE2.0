@@ -15,10 +15,8 @@ import static jarvice.intermediate.icodeimpl.ICodeNodeTypeImpl.*;
 /**
  * <h1>AssignmentStatementParser</h1>
  *
- * <p>Parse a Pascal assignment statement.</p>
+ * <p>Parse a Wookie assignment statement.</p>
  *
- * <p>Copyright (c) 2009 by Ronald Mak</p>
- * <p>For instructional purposes only.  No warranties.</p>
  */
 public class AssignmentStatementParser extends StatementParser
 {
@@ -36,11 +34,11 @@ public class AssignmentStatementParser extends StatementParser
     }
 
     // Synchronization set for the := token.
-    private static final EnumSet<WookieTokenType> COLON_EQUALS_SET =
+    private static final EnumSet<WookieTokenType> EQUALS_SET =
         ExpressionParser.EXPR_START_SET.clone();
     static {
-        COLON_EQUALS_SET.add(COLON_EQUALS);
-        COLON_EQUALS_SET.addAll(StatementParser.STMT_FOLLOW_SET);
+        EQUALS_SET.add(EQUALS);
+        EQUALS_SET.addAll(StatementParser.STMT_FOLLOW_SET);
     }
 
     /**
@@ -66,13 +64,13 @@ public class AssignmentStatementParser extends StatementParser
         // The ASSIGN node adopts the variable node as its first child.
         assignNode.addChild(targetNode);
 
-        // Synchronize on the := token.
-        token = synchronize(COLON_EQUALS_SET);
-        if (token.getType() == COLON_EQUALS) {
-            token = nextToken();  // consume the :=
+        // Synchronize on the = token.
+        token = synchronize(EQUALS_SET);
+        if (token.getType() == EQUALS) {
+            token = nextToken();  // consume the =
         }
         else {
-            errorHandler.flag(token, MISSING_COLON_EQUALS, this);
+            errorHandler.flag(token, MISSING_EQUALS, this);
         }
 
         // Parse the expression.  The ASSIGN node adopts the expression's

@@ -15,29 +15,81 @@ import jarvice.frontend.TokenType;
  */
 public enum WookieTokenType implements TokenType
 {
-    // Reserved words.
-    AND, ARRAY, BEGIN, CASE, CONST, DIV, DO, DOWNTO, ELSE, END,
-    FILE, FOR, FUNCTION, GOTO, IF, IN, LABEL, MOD, NIL, NOT,
-    OF, OR, PACKED, PROCEDURE, PROGRAM, RECORD, REPEAT, SET,
-    THEN, TO, TYPE, UNTIL, VAR, WHILE, WITH,
+	 
+     //WOOKIE reserved words
+	
+      AUTO, ELSE, LONG, SWITCH, BREAK, ENUM, REGISTER, TYPEDEF, CASE, EXTERN,
+      RETURN, UNION, CHAR, FLOAT, SHORT, UNSIGNED, CONST, FOR, SIGNED, VOID,
+      CONTINUE, GOTO, SIZEOF, VOLATILE, DEFAULT, IF, STATIC, WHILE, DO, INT,
+      STRUCT, _PACKED, DOUBLE, _BOOL,
+      
+      /* Words in both PASCAL and WOOKIE
+       AND, CASE, CONST, DO, ELSE, FOR, GOTO, IF, NOT, OR, WHILE
+      */
+      
+      // PASCAL reserved words
+      
+      ARRAY, BEGIN, DIV, DOWNTO, END,
+      FILE, FUNCTION, IN, LABEL, MOD, NIL,
+      OF, PACKED, PROCEDURE, PROGRAM, RECORD, REPEAT, SET,
+      THEN, TO, TYPE, UNTIL, VAR, WITH,
+      
+      
+      
+      //WOOKIE Special Symbols 
+      
+      //Arithmetic 
+      PLUS("+"), MINUS("-"), PRODUCT("*"), DIVIDE("/"), MODULUS("%"),
+      
+      //Sequencing 
+      COMMA(","), SEMICOLON(";"), COLON(":"),
+      
+      //Assignment 
+      EQUALS("="), PLUS_EQUALS("+="), MINUS_EQUALS("-="),
+      
+      //Grouping 
+      LEFT_PAREN("("), RIGHT_PAREN(")"),
+      
+      //Reference and Dereference 
+      LEFT_BRACKET("["), RIGHT_BRACKET("]"), AMPERSAND("&"), STAR("*"), QUOTE("'"),
+      
+      //Equality Testing 
+      EQUALS_EQUALS("=="), NOT_EQUALS("!="),
+      
+      //Boolean logic 
+      AND("&&"), OR("||"), NOT("!"),
+      
+      //Order relation 
+      LESS_THAN("<"), LESS_EQUALS("<="), GREATER_EQUALS(">="), GREATER_THAN(">"),
+      LEFT_BRACE("{"), RIGHT_BRACE("}"), UP_ARROW("^"),
+     
 
-    // Special symbols.
-    PLUS("+"), MINUS("-"), STAR("*"), SLASH("/"), COLON_EQUALS(":="),
-    DOT("."), COMMA(","), SEMICOLON(";"), COLON(":"), QUOTE("'"),
+    // PASCAL Special symbols.
+    
+    /* Symbols in both PASCAL and WOOKIE
+    
+    COMMA(","), SEMICOLON(";"), COLON(":"), QUOTE("'"),
     EQUALS("="), NOT_EQUALS("<>"), LESS_THAN("<"), LESS_EQUALS("<="),
     GREATER_EQUALS(">="), GREATER_THAN(">"), LEFT_PAREN("("), RIGHT_PAREN(")"),
     LEFT_BRACKET("["), RIGHT_BRACKET("]"), LEFT_BRACE("{"), RIGHT_BRACE("}"),
-    UP_ARROW("^"), DOT_DOT(".."),
+    UP_ARROW("^"), STAR("*"), PLUS("+"), MINUS("-"), 
+    
+     */
+    
+    SLASH("/"), //COLON_EQUALS(":="),
+    DOT("."), DOT_DOT(".."),
 
-    IDENTIFIER, INTEGER, REAL, STRING,
+    IDENTIFIER, REAL, STRING,
     ERROR, END_OF_FILE;
 
-    private static final int FIRST_RESERVED_INDEX = AND.ordinal();
-    private static final int LAST_RESERVED_INDEX  = WITH.ordinal();
-
+    private static final int FIRST_RESERVED_INDEX = AUTO.ordinal();
+    private static final int LAST_RESERVED_INDEX  = WITH.ordinal(); //pascal and wookie
+    //private static final int LAST_RESERVED_INDEX  = WITH.ordinal(); //wookie only
+   
     private static final int FIRST_SPECIAL_INDEX = PLUS.ordinal();
-    private static final int LAST_SPECIAL_INDEX  = DOT_DOT.ordinal();
-
+    private static final int LAST_SPECIAL_INDEX  = DOT_DOT.ordinal(); //pascal and wookie
+    //private static final int LAST_SPECIAL_INDEX  = UP_ARROW.ordinal(); //wookie only
+    
     private String text;  // token text
 
     /**

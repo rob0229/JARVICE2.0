@@ -12,12 +12,10 @@ import static jarvice.intermediate.symtabimpl.SymTabKeyImpl.*;
 import static jarvice.message.MessageType.*;
 
 /**
- * <h1>Pascal</h1>
+ * <h1>Wookie</h1>
  *
- * <p>Compile or interpret a Pascal source program.</p>
+ * <p>Compile or interpret a Wookie source program.</p>
  *
- * <p>Copyright (c) 2009 by Ronald Mak</p>
- * <p>For instructional purposes only.  No warranties.</p>
  */
 public class Wookie
 {
@@ -88,6 +86,9 @@ public class Wookie
      */
     public static void main(String args[])
     {
+    	
+    	////// C:\\Users\\Jerry\\Desktop\\test.c /////
+    	
         try {
             String operation = args[0];
 

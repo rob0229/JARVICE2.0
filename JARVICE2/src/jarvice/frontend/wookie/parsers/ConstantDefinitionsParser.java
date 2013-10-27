@@ -44,7 +44,7 @@ public class ConstantDefinitionsParser extends DeclarationsParser
 
     // Synchronization set for starting a constant.
     static final EnumSet<WookieTokenType> CONSTANT_START_SET =
-        EnumSet.of(IDENTIFIER, INTEGER, REAL, PLUS, MINUS, STRING, SEMICOLON);
+        EnumSet.of(IDENTIFIER, INT, REAL, PLUS, MINUS, STRING, SEMICOLON);
 
     // Synchronization set for the = token.
     private static final EnumSet<WookieTokenType> EQUALS_SET =
@@ -169,7 +169,7 @@ public class ConstantDefinitionsParser extends DeclarationsParser
                 return parseIdentifierConstant(token, sign);
             }
 
-            case INTEGER: {
+            case INT: {
                 Integer value = (Integer) token.getValue();
                 nextToken();  // consume the number
                 return sign == MINUS ? -value : value;
