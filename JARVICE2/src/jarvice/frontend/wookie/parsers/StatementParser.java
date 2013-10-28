@@ -31,15 +31,15 @@ public class StatementParser extends WookieParserTD
     {
         super(parent);
     }
-
+//ROB ADDED ELSE_IF***********************************************************************************************
     // Synchronization set for starting a statement.
     protected static final EnumSet<WookieTokenType> STMT_START_SET =
-        EnumSet.of(BEGIN, CASE, FOR, WookieTokenType.IF, REPEAT, WHILE,
+        EnumSet.of(LEFT_BRACE, BEGIN, SWITCH, FOR, WookieTokenType.IF, ELSE_IF, DO, WHILE,
                    IDENTIFIER, SEMICOLON);
-
+//CHANGED END TO RIGHT BRACE AND REMOVED UNTIL and DOT, ADDED RETURN************************************************************
     // Synchronization set for following a statement.
     protected static final EnumSet<WookieTokenType> STMT_FOLLOW_SET =
-        EnumSet.of(SEMICOLON, END, ELSE, UNTIL, DOT);
+        EnumSet.of(SEMICOLON, RIGHT_BRACE, RIGHT_PAREN, UNTIL, DOT, END, ELSE);
 
     /**
      * Parse a statement.
@@ -55,6 +55,7 @@ public class StatementParser extends WookieParserTD
 
         switch ((WookieTokenType) token.getType()) {
 
+//ROB****************REPLACE BEGIN as beginning of compound statement****************************************************** 
             case BEGIN: {
                 CompoundStatementParser compoundParser =
                     new CompoundStatementParser(this);
@@ -103,9 +104,9 @@ public class StatementParser extends WookieParserTD
                 break;
             }
 
-            case REPEAT: {
-                RepeatStatementParser repeatParser =
-                    new RepeatStatementParser(this);
+            case DO: {
+                DoWhileStatementParser repeatParser =
+                    new DoWhileStatementParser(this);
                 statementNode = repeatParser.parse(token);
                 break;
             }

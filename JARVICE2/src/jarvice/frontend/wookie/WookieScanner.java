@@ -74,7 +74,6 @@ public class WookieScanner extends Scanner {
 	 */
 	private void skipWhiteSpace() throws Exception {
 
-		String s = " ";
 		char currentChar = currentChar();
 
 		while (Character.isWhitespace(currentChar) || (currentChar == '/')
@@ -115,7 +114,7 @@ public class WookieScanner extends Scanner {
 					do {
 
 						currentChar = nextChar(); // consume comment characters
-					} while (!(currentChar == source.EOL));
+					} while (!(currentChar == Source.EOL));
 				}
 			}
 

@@ -43,7 +43,10 @@ public enum WookieErrorCode
     MISSING_EQUALS("Missing ="),
     MISSING_FOR_CONTROL("Invalid FOR control variable"),
     MISSING_IDENTIFIER("Missing identifier"),
+  //ROB ADDED LEFT BRACE for While loop parsing**********************************************************************************************************
+    MISSING_LEFT_BRACE("Missing {"),
     MISSING_LEFT_BRACKET("Missing ["),
+    MISSING_LEFT_PAREN("Missing ("),
     MISSING_OF("Missing OF"),
     MISSING_PERIOD("Missing ."),
     MISSING_PROGRAM("Missing PROGRAM"),
@@ -52,7 +55,9 @@ public enum WookieErrorCode
     MISSING_SEMICOLON("Missing ;"),
     MISSING_THEN("Missing THEN"),
     MISSING_TO_DOWNTO("Missing TO or DOWNTO"),
+  //ROB ADDED MISSING WHILE for do/while parsing****************************************************************************************************    
     MISSING_UNTIL("Missing UNTIL"),
+    MISSING_WHILE("Missing WHILE"),
     MISSING_VARIABLE("Missing variable"),
     NOT_CONSTANT_IDENTIFIER("Not a constant identifier"),
     NOT_RECORD_VARIABLE("Not a record variable"),

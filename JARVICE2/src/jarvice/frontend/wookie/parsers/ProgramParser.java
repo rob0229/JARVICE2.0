@@ -29,6 +29,9 @@ public class ProgramParser extends DeclarationsParser
         super(parent);
     }
 
+    
+    
+    
     // Synchronization set to start a program.
     static final EnumSet<WookieTokenType> PROGRAM_START_SET =
         EnumSet.of(PROGRAM, SEMICOLON);

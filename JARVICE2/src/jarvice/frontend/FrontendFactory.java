@@ -25,13 +25,13 @@ public class FrontendFactory
                                       Source source)
         throws Exception
     {
-        if (language.equalsIgnoreCase("Pascal") &&
+        if (language.equalsIgnoreCase("Wookie") &&
             type.equalsIgnoreCase("top-down"))
         {
             Scanner scanner = new WookieScanner(source);
             return new WookieParserTD(scanner);
         }
-        else if (!language.equalsIgnoreCase("Pascal")) {
+        else if (!language.equalsIgnoreCase("Wookie")) {
             throw new Exception("Parser factory: Invalid language '" +
                                 language + "'");
         }

@@ -416,7 +416,9 @@ public class ExpressionParser extends StatementParser
                 rootNode.setTypeSpec(Predefined.realType);
                 break;
             }
-
+//ROB
+//******************************NEEDS TO BE A CHAR ARRAY******************************************************************************************************
+//************************************************************************************************************************************************************
             case STRING: {
                 String value = (String) token.getValue();
 

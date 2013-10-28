@@ -40,7 +40,7 @@ public class Wookie
             source = new Source(new BufferedReader(new FileReader(filePath)));
             source.addMessageListener(new SourceMessageListener());
 
-            parser = FrontendFactory.createParser("Pascal", "top-down", source);
+            parser = FrontendFactory.createParser("Wookie", "top-down", source);
             parser.addMessageListener(new ParserMessageListener());
 
             backend = BackendFactory.createBackend(operation);

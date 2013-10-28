@@ -18,19 +18,19 @@ import static jarvice.intermediate.icodeimpl.ICodeNodeTypeImpl.*;
  * <p>Copyright (c) 2009 by Ronald Mak</p>
  * <p>For instructional purposes only.  No warranties.</p>
  */
-public class RepeatStatementParser extends StatementParser
+public class DoWhileStatementParser extends StatementParser
 {
     /**
      * Constructor.
      * @param parent the parent parser.
      */
-    public RepeatStatementParser(WookieParserTD parent)
+    public DoWhileStatementParser(WookieParserTD parent)
     {
         super(parent);
     }
 
     /**
-     * Parse a REPEAT statement.
+     * Parse a DO WHILE statement.
      * @param token the initial token.
      * @return the root node of the generated parse tree.
      * @throws Exception if an error occurred.
@@ -38,16 +38,16 @@ public class RepeatStatementParser extends StatementParser
     public ICodeNode parse(Token token)
         throws Exception
     {
-        token = nextToken();  // consume the REPEAT
+        token = nextToken();  // consume the DO
 
         // Create the LOOP and TEST nodes.
         ICodeNode loopNode = ICodeFactory.createICodeNode(LOOP);
         ICodeNode testNode = ICodeFactory.createICodeNode(TEST);
 
-        // Parse the statement list terminated by the UNTIL token.
+        // Parse the statement list terminated by the WHILE token.
         // The LOOP node is the parent of the statement subtrees.
         StatementParser statementParser = new StatementParser(this);
-        statementParser.parseList(token, loopNode, UNTIL, MISSING_UNTIL);
+        statementParser.parseList(token, loopNode, WHILE, MISSING_WHILE);
         token = currentToken();
 
         // Parse the expression.
