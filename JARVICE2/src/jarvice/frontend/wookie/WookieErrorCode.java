@@ -52,6 +52,7 @@ public enum WookieErrorCode
     MISSING_PROGRAM("Missing PROGRAM"),
     MISSING_RIGHT_BRACKET("Missing ]"),
     MISSING_RIGHT_PAREN("Missing )"),
+    MISSING_RIGHT_BRACE("Missing }"),
     MISSING_SEMICOLON("Missing ;"),
     MISSING_THEN("Missing THEN"),
     MISSING_TO_DOWNTO("Missing TO or DOWNTO"),

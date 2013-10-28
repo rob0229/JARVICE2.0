@@ -54,13 +54,13 @@ public class ProgramParser extends DeclarationsParser
         // Parse the program.
         DeclaredRoutineParser routineParser = new DeclaredRoutineParser(this);
         routineParser.parse(token, parentId);
-
+/*
         // Look for the final period.
         token = currentToken();
         if (token.getType() != DOT) {
             errorHandler.flag(token, MISSING_PERIOD, this);
         }
-
+*/
         return null;
     }
 }
