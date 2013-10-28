@@ -1,3 +1,4 @@
+<pre>
 PROGRAM Block(infile, outfile);
 
 
@@ -79,3 +80,4 @@ while(false){
 
 
 END.
+</pre>
